@@ -2,10 +2,11 @@
 
 
 ## TODO:
-- [ ] Create product list page
-    - [ ] Fetch data from api of choice
-    - [ ] Search functionality that updates without refreshing page
-        - [ ] Update as soon as user input stops
+- [x] Create product list page
+    - [x] Fetch data from api of choice
+    - [x] Search functionality that updates without refreshing page
+        - [x] Update as soon as user input stops
+    - [x] Implement pagination
 - [ ] Create product detail page
     -  Try pararell routes? 
 
