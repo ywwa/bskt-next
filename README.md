@@ -5,7 +5,7 @@ With support of search, pagination and [parallel routing](https://nextjs.org/doc
 
 ### Preview
 
-Live preview is available [here](https://bstk-next.vercel.app)
+Live preview is available [here](https://bskt-next.vercel.app)
 
 ### Local environment
 
