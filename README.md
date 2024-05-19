@@ -1,7 +1,7 @@
 # bstk-next
 
 Simple Web App written in React(Next.js) for fetching mock data from [dummyjson.com](https://dummyjson.com/) \
-With support of search, pagination and [parallel routing](https://nextjs.org/docs/app/building-your-application/routing/parallel-routes).
+With responsive mobile friendly design, support of search, pagination and [parallel routing](https://nextjs.org/docs/app/building-your-application/routing/parallel-routes).
 
 ### Preview
 
