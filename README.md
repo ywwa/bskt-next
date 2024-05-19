@@ -7,7 +7,8 @@
     - [x] Search functionality that updates without refreshing page
         - [x] Update as soon as user input stops
     - [x] Implement pagination
-- [ ] Create product detail page
-    -  Try pararell routes? 
-
+- [x] Create product detail page
+    - [x] Implement product page
+        - [x] Parallel route as modal
+        - [x] Full page view
 - [ ] Unit tests using @testing-library/react
