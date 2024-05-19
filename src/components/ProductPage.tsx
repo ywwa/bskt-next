@@ -1,23 +1,15 @@
 "use client";
 
-import { TProduct } from "@/types";
 import Rating from "./Rating";
 import { HTMLAttributes } from "react";
 import { cn } from "@/utils";
 import { IoClose } from "react-icons/io5";
 import { useRouter } from "next/navigation";
+import { getProduct } from "@/dataGetters";
 
 interface ProductPageProps extends HTMLAttributes<HTMLDivElement> {
   productId: number;
   hideCloseBtn?: boolean;
-}
-
-async function getProduct(id: number): Promise<TProduct> {
-  const reqUrl = new URL("https://dummyjson.com/products/" + id);
-  const res = await fetch(reqUrl);
-  if (!res.ok) throw new Error();
-
-  return res.json();
 }
 
 export default async function FullPageProductPage({
