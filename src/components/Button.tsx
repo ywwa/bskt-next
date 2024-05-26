@@ -11,13 +11,7 @@ interface ButtonProps
   disabled?: boolean;
 }
 
-const Button = ({
-  type,
-  value,
-  active,
-  onClick,
-  disabled,
-}: ButtonProps) => {
+const Button = ({ type, value, active, onClick, disabled }: ButtonProps) => {
   return (
     <button
       disabled={disabled}

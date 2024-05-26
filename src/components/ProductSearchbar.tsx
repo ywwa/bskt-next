@@ -21,10 +21,7 @@ const ProductSearchbar = () => {
   }, 200);
 
   return (
-    <div
-      className="w-full group relative 
-      shadow-[0px_4px_16px_rgba(38,19,54,0.1),_0px_8px_24px_rgba(38,19,54,0.1),_0px_16px_56px_rgba(38,19,54,0.1)]"
-    >
+    <div className="w-full group relative">
       <input
         type="text"
         className={`bg-zinc-900 py-2 px-4 transition-all duration-200
@@ -35,8 +32,9 @@ const ProductSearchbar = () => {
         defaultValue={searchParams.get("search")?.toString()}
       />
       <FaSearch
-        className={`absolute top-1/2 right-4 -translate-y-1/2 pointer-events-none
-          group-hover:text-fuchsia-300 transition-all duration-200 text-zinc-500`}
+        className={`absolute top-1/2 right-4 -translate-y-1/2 
+          pointer-events-none group-hover:text-fuchsia-300 transition-all 
+          duration-200 text-zinc-500`}
       />
     </div>
   );

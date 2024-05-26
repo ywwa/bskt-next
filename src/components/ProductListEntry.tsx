@@ -5,9 +5,15 @@ import Link from "next/link";
 const ProductListEntry = ({ data }: { data: TProduct }) => {
   return (
     <Link href={`/product/${data.id}`} passHref>
-      <li className="border border-zinc-800 rounded-md flex p-2 backdrop-blur items-center">
+      <li
+        className="border border-zinc-800 rounded-md flex p-2 backdrop-blur 
+          items-center"
+      >
         <div className="w-10/12 flex gap-2">
-          <div className="relative aspect-square size-10 rounded-md overflow-hidden">
+          <div
+            className="relative aspect-square size-10 rounded-md 
+              overflow-hidden"
+          >
             <Image src={data.thumbnail} alt={data.title} fill sizes="40px" />
           </div>
 

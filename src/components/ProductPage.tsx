@@ -22,7 +22,8 @@ export default async function FullPageProductPage({
   return (
     <div
       className={cn(
-        "border p-5 md:w-2/3 lg:w-1/3 bg-zinc-950 rounded-md border-zinc-700 flex flex-col relative",
+        `border p-5 md:w-2/3 lg:w-1/3 bg-zinc-950 rounded-md border-zinc-700 
+        flex flex-col relative`,
         className,
       )}
     >
@@ -37,7 +38,10 @@ export default async function FullPageProductPage({
       <div className="w-2/3 h-full mx-auto relative overflow-hidden rounded-lg">
         <img src={data.thumbnail} alt={data.title} draggable={false} />
       </div>
-      <div className="px-1 flex flex-col items-center border-t mt-5 border-dashed border-zinc-700">
+      <div
+        className="px-1 flex flex-col items-center border-t mt-5 
+        border-dashed border-zinc-700"
+      >
         <div className="flex justify-between items-center py-2 w-full">
           <div className="text-zinc-500">
             <p className="text-lg text-white font-bold">{data.title}</p>

@@ -20,7 +20,8 @@ export function Modal({ children }: { children: ReactNode }) {
     <dialog
       ref={dialogRef}
       onClose={onDismiss}
-      className="w-screen h-screen m-0 bg-black/70 backdrop-blur-lg text-white flex items-center justify-center p-5 relative"
+      className="w-screen h-screen m-0 bg-black/70 backdrop-blur-lg text-white 
+        flex items-center justify-center p-5 relative"
     >
       {children}
     </dialog>,
