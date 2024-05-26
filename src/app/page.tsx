@@ -3,6 +3,9 @@ import ProductList from "@/components/ProductList";
 import ProductSearchbar from "@/components/ProductSearchbar";
 import { getProducts } from "@/dataGetters";
 
+export const dynamic = "force-dynamic";
+export const fetchCache = "default-no-store";
+
 interface HomeProps {
   searchParams?: {
     search?: string;
@@ -15,12 +18,21 @@ export default async function Home({ searchParams }: HomeProps) {
   const currentPage = Number(searchParams?.page) || 1;
 
   const data = await getProducts(currentPage, searchQuery);
+  const lastPage = Math.ceil(data.total / 10);
   return (
-    <main className="flex flex-col h-screen bg-squared bg-[size:25px_25px] bg-fixed">
-      <div className="mx-auto h-screen w-full lg:w-2/3 xl:w-1/3 space-y-5 p-5 flex flex-col">
+    <main
+      className={
+        "flex flex-col h-screen bg-squared bg-[size:25px_25px] bg-fixed"
+      }
+    >
+      <div
+        className={
+          "mx-auto h-screen w-full lg:w-2/3 xl:w-1/3 space-y-5 p-5 flex flex-col"
+        }
+      >
         <ProductSearchbar />
         <ProductList data={data.products} />
-        <Pagination page={currentPage} lastPage={data.total / 10} />
+        <Pagination page={currentPage} lastPage={lastPage} />
       </div>
     </main>
   );
