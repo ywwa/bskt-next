@@ -1,14 +1,17 @@
-import FullPageProductPage from "@/components/ProductPage";
-import { Modal } from "./modal";
+"use client";
+import ProductPageContent from "@/components/ProductPageContent";
+import Modal from "./modal";
 
-export default function ProductModal({
-  params: { id },
-}: {
+interface ProductModalPageProps {
   params: { id: number };
-}) {
+}
+
+export default function ProductModalPage({
+  params: { id },
+}: ProductModalPageProps) {
   return (
     <Modal>
-      <FullPageProductPage productId={id} />
+      <ProductPageContent productId={id} />
     </Modal>
   );
 }

@@ -1,38 +1,33 @@
+import List from "@/components/List";
 import Pagination from "@/components/Pagination";
-import ProductList from "@/components/ProductList";
-import ProductSearchbar from "@/components/ProductSearchbar";
-import { getProducts } from "@/dataGetters";
+import Searchbar from "@/components/Searchbar";
+import { useProducts } from "@/hooks/useProducts";
 
-export const dynamic = "force-dynamic";
-export const fetchCache = "default-no-store";
-
-interface HomeProps {
-  searchParams?: {
+interface PageProps {
+  searchParams: {
     search?: string;
     page?: string;
   };
 }
+export default async function HomePage({ searchParams }: PageProps) {
+  const query = searchParams?.search || "";
+  const page = Number(searchParams?.page) || 1;
 
-export default async function Home({ searchParams }: HomeProps) {
-  const searchQuery = searchParams?.search || "";
-  const currentPage = Number(searchParams?.page) || 1;
-
-  const data = await getProducts(currentPage, searchQuery);
+  const data = await useProducts({ page: page, searchQuery: query });
   const lastPage = Math.ceil(data.total / 10);
+
   return (
     <main
-      className={
-        "flex flex-col h-screen bg-squared bg-[size:25px_25px] bg-fixed"
-      }
+      className="flex min-h-screen flex-col bg-squared bg-[size:25px_25px] 
+      bg-fixed"
     >
       <div
-        className={
-          "mx-auto h-screen w-full lg:w-2/3 xl:w-1/3 space-y-5 p-5 flex flex-col"
-        }
+        className="mx-auto flex w-full flex-1 flex-col space-y-5 p-5 lg:w-2/3 
+        xl:w-1/3"
       >
-        <ProductSearchbar />
-        <ProductList data={data.products} />
-        <Pagination page={currentPage} lastPage={lastPage} />
+        <Searchbar />
+        <List products={data.products} />
+        <Pagination page={page} last={lastPage} />
       </div>
     </main>
   );

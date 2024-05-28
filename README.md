@@ -5,7 +5,7 @@ With responsive mobile friendly design, support of search, pagination and [paral
 
 ### Preview
 
-Live preview is available [here](https://bskt-next.vercel.app)
+Live preview is available [here](https://bskt-next.vercel.app).
 
 ### Local environment
 
@@ -13,19 +13,19 @@ Live preview is available [here](https://bskt-next.vercel.app)
 git clone https://github.com/ywwa/bskt-next.git
 cd bskt-next
 
-bun i # or any prefered package manager
+bun install # or any other prefered package manager
 bun run dev
 ```
 
 #### TODO:
 
 - [x] Create product list page
-  - [x] Fetch data from api of choice
+  - [x] Fetch data from api of choice (should've used SWR there aswell but couldn't get it to work with my way of handling pagination etc.)
   - [x] Search functionality that updates without refreshing page
     - [x] Update as soon as user input stops
   - [x] Implement pagination
 - [x] Create product detail page
-  - [x] Implement product page
+  - [x] Implement product page (useSWR)
     - [x] Parallel route as modal
     - [x] Full page view
-- [ ] Unit tests using @testing-library/react
+- [ ] Unit tests using @testing-library/react (Couldn't handle this)

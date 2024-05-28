@@ -1,36 +1,38 @@
 "use client";
 
-import FullPageProductPage from "@/components/ProductPage";
+import ProductPageContent from "@/components/ProductPageContent";
 import { useRouter } from "next/navigation";
 
-export const dynamic = "force-dynamic";
-
-export default function ProductPage({
-  params: { id },
-}: {
+interface ProductPageProps {
   params: { id: number };
-}) {
+}
+
+const ProductPage = ({ params: { id } }: ProductPageProps) => {
   const { back } = useRouter();
+
   return (
     <main
-      className="flex flex-col items-center justify-between py-20 h-screen 
-        bg-squared bg-[size:25px_25px] bg-fixed"
+      className="flex h-screen flex-col items-center justify-between bg-squared 
+      bg-[size:25px_25px] bg-fixed py-20"
     >
-      <div className="container flex flex-col items-center mx-auto">
-        <FullPageProductPage
+      <div className="container mx-auto flex flex-1 flex-col items-center">
+        <ProductPageContent
           productId={id}
           hideCloseBtn
           className="border-none bg-transparent"
         />
       </div>
+
       <button
-        className="text-lg border py-2 px-8 rounded-md backdrop-blur 
-        border-zinc-700 hover:border-fuchsia-300 transition-all duration-200
-        hover:text-black hover:bg-fuchsia-300"
+        className="rounded-md border border-zinc-700 px-8 py-2 text-lg 
+        backdrop-blur transition-all duration-200 hover:border-fuchsia-300
+        hover:bg-fuchsia-300 hover:text-black"
         onClick={back}
       >
         Back
       </button>
     </main>
   );
-}
+};
+
+export default ProductPage;
