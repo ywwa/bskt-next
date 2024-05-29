@@ -29,3 +29,7 @@ bun run dev
     - [x] Parallel route as modal
     - [x] Full page view
 - [ ] Unit tests using @testing-library/react (Couldn't handle this)
+
+#### KNOWN BUGS:
+- Mobile loading state of modal not covering full width as intended.
+- Sometimes when cleaning search prompt for some reason content of entire page disappears ?
